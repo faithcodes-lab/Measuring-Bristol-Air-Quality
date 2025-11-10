@@ -39,7 +39,7 @@ Files:
 
 ---
 
-## 🧠 Reflection
+## Reflection
 This project demonstrates the practical application of **data normalization**, **entity-relationship modeling**, and **relational database implementation** for real-world environmental data — aligning with best practices for sustainable city monitoring systems.
 
 ---
