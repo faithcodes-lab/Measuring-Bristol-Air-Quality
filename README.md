@@ -3,7 +3,7 @@
 **Module:** Data Management Fundamentals  
 **Coursework Year:** 2025/26  
 **Author:** Faith Olan-George  
-**Institution:** University of the west of england 
+**Institution:** University of the West of England, Bristol. 
 
 ---
 
