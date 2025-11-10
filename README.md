@@ -7,7 +7,7 @@
 
 ---
 
-##Component 1 – Organise and Model the Data
+## Component 1 – Organise and Model the Data
 - Designed a normalized **Entity Relationship Diagram (ERD)** in **MySQL Workbench**.  
 - Entities: `Constituency`, `Station`, and `Reading`.  
 - Relationships:  
