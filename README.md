@@ -55,3 +55,6 @@ Measuring-Bristol-Air-Quality/
 
 *More components and scripts will be added as the project progresses.*
 
+[Linkedin](www.linkedin.com/in/faith-olan-george-abb2b0286) |  [GitHub](https://github.com/faithcodes-lab)
+
+
