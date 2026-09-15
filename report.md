@@ -1,10 +1,10 @@
-## Component 7: Reflective Report
+## Reflective Report
 
-### Module: UFCFLR-15-M Assessment: Modelling & Mapping Bristol Air Quality Data
+### Modelling and Mapping Bristol Air Quality Data
 
 ## 1. Introduction
 
-This report provides a critical reflection on the end-to-end data management lifecycle undertaken to model, cleanse, and query the Bristol Air Quality dataset. Furthermore, the assignment explored polyglot persistence through the implementation of a NoSQL prototype using QuestDB. This report analyses the specific engineering challenges encountered, particularly spatial mapping, data cleansing, and transaction management, and evaluates the solutions devised to resolve them.
+This report provides a critical reflection on the end-to-end data management lifecycle undertaken to model, cleanse, and query the Bristol Air Quality dataset. Furthermore, the project explored polyglot persistence through the implementation of a NoSQL prototype using QuestDB. This report analyses the specific engineering challenges encountered, particularly spatial mapping, data cleansing, and transaction management, and evaluates the solutions devised to resolve them.
 
 ## 2. Critical Review of Implementation Challenges
 Significant learning outcomes were derived from practical implementations where theoretical database design principles clashed with the realities of handling large-scale, imperfect data.
@@ -173,7 +173,7 @@ if __name__ == "__main__":
 
 ```
 
- While a surrogate AUTO_INCREMENT key is standard in many relational designs, it lacks a link to the source data. I identified the source column `ObjectId2` served as a unique row identifier and mapped it directly to the `Reading_ID` primary key. This strategic choice enforced Idempotency and Data Lineage: The ETL pipeline (Component 4) could natively detect and reject duplicate records based on their original ID. using a surrogate key would have compromised data integrity by creating new duplicate rows with new IDs after a partial failure(Connolly and Begg, 2015).
+ While a surrogate AUTO_INCREMENT key is standard in many relational designs, it lacks a link to the source data. I identified the source column `ObjectId2` served as a unique row identifier and mapped it directly to the `Reading_ID` primary key. This strategic choice enforced Idempotency and Data Lineage: The ETL pipeline could natively detect and reject duplicate records based on their original ID. using a surrogate key would have compromised data integrity by creating new duplicate rows with new IDs after a partial failure(Connolly and Begg, 2015).
 
 
 ## 2.2. Forward engineer the ER model to a MySQL database 

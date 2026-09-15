@@ -1,5 +1,6 @@
-data/
-*.csv
-*.zip
-*.tmp
+.venv/
+.vscode/
 .DS_Store
+__pycache__/
+*.zip
+sample_station_452.csv

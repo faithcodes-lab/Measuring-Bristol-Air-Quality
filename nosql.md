@@ -1,6 +1,5 @@
-# Component 6: NoSQL Data Model and Implementation
-**Module:** UFCFLR-15-M
-**Assessment:** Modelling & Mapping Bristol Air Quality Data
+# NoSQL Data Model and Implementation
+**Project:** Modelling and Mapping Bristol Air Quality Data
 
 1\. Introduction and Technology Selection
 -----------------------------------------
@@ -14,7 +13,7 @@ To address these limitations, I selected **QuestDB**, a high-performance Time-Se
 2\. Data Modelling Strategy
 ---------------------------
 
-Transitioning from a relational database management system (such as the data ingestion performed in component 4) to a time series database requires a paradigm shift from a 'schema-first', normalised approach to a 'query-first', denormalised strategy.
+Transitioning from a relational database management system (such as the data ingestion described earlier) to a time series database requires a paradigm shift from a 'schema-first', normalised approach to a 'query-first', denormalised strategy.
 
 ### 2.1. Denormalisation and Schema Design
 
@@ -282,7 +281,7 @@ This section contrasts the MySQL and QuestDB approaches through the lens of the 
 
 ### 4.1. Consistency vs. Availability (CAP Theorem) and Data Integrity
 
-In Component 1, I prioritised strict data integrity for the MySQL implementation. I applied a 'No Loss' decomposition strategy to create a Third Normal Form (3NF) schema, ensuring all attributes from the source were preserved without redundancy. Furthermore, I explicitly selected the `ObjectId2` field as the Primary Key (`ReadingID`) rather than using a surrogate auto-increment key. This design choice enforced idempotency and data lineage, ensuring that the database state remained traceable to the exact source row (Connolly and Begg, 2015). While this rigour guarantees consistency (C in CAP Theorem), I found it creates a brittle ingestion pipeline where minor data anomalies are rejected.
+In the relational design, I prioritised strict data integrity for the MySQL implementation. I applied a 'No Loss' decomposition strategy to create a Third Normal Form (3NF) schema, ensuring all attributes from the source were preserved without redundancy. Furthermore, I explicitly selected the `ObjectId2` field as the Primary Key (`ReadingID`) rather than using a surrogate auto-increment key. This design choice enforced idempotency and data lineage, ensuring that the database state remained traceable to the exact source row (Connolly and Begg, 2015). While this rigour guarantees consistency (C in CAP Theorem), I found it creates a brittle ingestion pipeline where minor data anomalies are rejected.
 
 In contrast, QuestDB prioritises Flexibility and Availability (A). The schema-on-write capabilities and relaxed constraint model allowed the system to accept high-velocity streams without the overhead of checking foreign key constraints against a `Station` table. In an IoT context, I consider the 'availability' to accept write streams is paramount as losing sensor data due to a schema validation error is often unacceptable (MDPI, 2024).
 
