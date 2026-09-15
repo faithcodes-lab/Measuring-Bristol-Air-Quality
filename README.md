@@ -1,4 +1,4 @@
-# Measuring Bristol Air Quality
+# Modelling and Mapping Bristol Air Quality Data
 
 An end-to-end data management project: designing a normalised relational database for 1.6 million air
 quality readings from 19 Bristol monitoring stations, populating it from raw open data, querying it
@@ -48,19 +48,16 @@ The source data contains station coordinates but no constituency. Rather than as
 
 ## Pipeline
 
-```
-raw CSV (1.6M rows, 1993-2023)
-   |
-   |  cropped.py      restrict to 2015-01-01 .. 2023-10-22, strip timezone suffixes
-   v
-   |  import.py       validate types, drop negative measures (except temperature),
-   |                  reject malformed rows to import_skipped.csv, bulk load to MySQL
-   v
-MySQL (pollution_db)
-   |
-   |  upload_to_questdb.py    denormalised wide-table load
-   v
-QuestDB (time-series prototype)
+```mermaid
+flowchart TD
+    raw["Raw CSV<br>1,603,492 rows, 1993 to 2023"]
+    crop["cropped.py<br>crop to 2015-01-01 through 2023-10-22<br>strip timezone suffixes"]
+    imp["import.py<br>validate types, drop negative measures<br>reject malformed rows, bulk load"]
+    mysql[("MySQL<br>pollution_db")]
+    load["upload_to_questdb.py<br>denormalised wide-table load"]
+    qdb[("QuestDB<br>time-series prototype")]
+
+    raw --> crop --> imp --> mysql --> load --> qdb
 ```
 
 Cleansing rules applied: `Site_ID` must be an integer, all measures except temperature must be
