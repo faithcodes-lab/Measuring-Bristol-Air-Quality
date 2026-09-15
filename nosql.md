@@ -157,10 +157,9 @@ try:
                             
                             row[date_idx] = micros
 
-                            # 10 Dec 2025 — Lecture Guidance:
-                            # We were advised that in NoSQL design, constituency and station details
-                            # should be included within the readings document/table (denormalised model).
-                            # This update reflects that guidance by embedding Station_Name and Constituency_Name.
+                            # In the NoSQL design, constituency and station details are embedded in the
+                            # readings table (denormalised model), so Station_Name and Constituency_Name
+                            # are written inline here rather than joined at query time.
 
                             row[site_id_idx:site_id_idx] = [station_name, constituency_name]
                             csv_writer.writerow(row)

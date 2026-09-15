@@ -106,34 +106,34 @@ time-series rather than document-shaped.
 
 **Schema**
 
-- [`pollution.sql`](pollution.sql) — full DDL: tables, primary and foreign keys, indexes
-- [`pollution-er.png`](images/pollution-er.png) — entity relationship diagram
+- [`pollution.sql`](pollution.sql): complete DDL with tables, primary and foreign keys, and indexes
+- [`pollution-er.png`](images/pollution-er.png): entity relationship diagram
 
 **Pipeline**
 
-- [`cropped.py`](cropped.py) — date-range cropping and timestamp cleanup
-- [`import.py`](import.py) — validation, cleansing and bulk load into MySQL
-- [`generate_station_sample.py`](generate_station_sample.py) — point-in-polygon spatial join of stations to constituencies
-- [`upload_to_questdb.py`](upload_to_questdb.py) — denormalised load into QuestDB
+- [`cropped.py`](cropped.py): date-range cropping and timestamp cleanup
+- [`import.py`](import.py): validation, cleansing and bulk load into MySQL
+- [`generate_station_sample.py`](generate_station_sample.py): point-in-polygon spatial join of stations to constituencies
+- [`upload_to_questdb.py`](upload_to_questdb.py): denormalised load into QuestDB
 
 **Queries**
 
-- [`query-a.sql`](query-a.sql) — highest recorded NOx reading in 2022
-- [`query-b.sql`](query-b.sql) — mean PM2.5 and VPM2.5 per station, 2022 at 08:00
-- [`query-c.sql`](query-c.sql) — the same aggregation across the full date range
+- [`query-a.sql`](query-a.sql): highest recorded NOx reading in 2022
+- [`query-b.sql`](query-b.sql): mean PM2.5 and VPM2.5 per station, 2022 at 08:00
+- [`query-c.sql`](query-c.sql): the same aggregation across the full date range
 
 **Write-ups**
 
-- [`report.md`](report.md) — design decisions, engineering problems hit, and how they were resolved
-- [`nosql.md`](nosql.md) — NoSQL model, implementation, and comparison against the relational design
+- [`report.md`](report.md): design decisions, engineering problems hit, and how they were resolved
+- [`nosql.md`](nosql.md): NoSQL model, implementation, and comparison against the relational design
 
 **Reference data**
 
-- [`station.csv`](station.csv) — the 19 monitoring stations and their coordinates
-- [`constituency.csv`](constituency.csv) — the four Bristol parliamentary constituencies
-- [`data_schema.csv`](data_schema.csv) — field-level definitions for every measure
-- [`import_skipped.csv`](import_skipped.csv) — rows rejected during validation
-- [`images/`](images) — ER diagram, query outputs and QuestDB screenshots
+- [`station.csv`](station.csv): the 19 monitoring stations and their coordinates
+- [`constituency.csv`](constituency.csv): the four Bristol parliamentary constituencies
+- [`data_schema.csv`](data_schema.csv): field-level definitions for every measure
+- [`import_skipped.csv`](import_skipped.csv): rows rejected during validation
+- [`images/`](images): ER diagram, query outputs and QuestDB screenshots
 
 ---
 
